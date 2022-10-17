@@ -22,9 +22,20 @@ def products():
 def greeding(name):
     return '<h1>hello {}, greeding form flask</h1>'.format(name)
 
+@app.route('/longitud/<lent>')
+def long(lent):
+    return '<h1>The long of the input is {}</h1>'.format(len(lent))
 
+@app.route('/login/<user>/<passw>')
+def login(user,passw):
+    if(user == passw):
+        return f'<h1>Welcome {user}!</h1>'
+    else:
+        return 'Error, username and password do not match!'
 
-
+@app.route('/sum/<a>/<b>/')
+def sumato(a,b):
+    return 'La suma es: {}'.format(int(a)+int(b))
 
 if __name__=='__main__':
     app.run()
