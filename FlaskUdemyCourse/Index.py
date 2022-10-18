@@ -16,6 +16,9 @@ def loops():
     people = ['Juan','Jairo','Albeiro','Kaiosama']
     return render_template('loop.html', people = people)
 
+@app.route('/conditional/<user>/<passw>')
+def condi(user, passw):
+    return render_template('Conditional.html',name = user, passw = passw)
 
 if __name__ == '__main__':
     app.run()
